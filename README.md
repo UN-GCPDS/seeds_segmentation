@@ -74,6 +74,16 @@ Para YOLOv11, la estructura es ligeramente diferente y se maneja a través del a
 
 ## Resultados
 
+A continuación se presentan las métricas de rendimiento esperadas para cada modelo en la base de datos de semillas:
+
+| Modelo               | Variante | Dice Coefficient | Jaccard Index | Sensitivity | Specificity | Precision (P) | Recall (R)  | mAP50 | mAP50-95 |
+|----------------------|-----------|------------------|---------------|-------------|-------------|---------------|-------------|-------|----------|
+| EffiSegNet           | 2c        | 0.82524          | 0.77986       | 0.80327     | 0.97725     | -             | -           | -     | -        |
+| ResUNet              | 2c        | 0.96209          | 0.93151       | 0.95886     | 0.95886     | -             | -           | -     | -        |
+| ResUNet              | 3c        | 0.80689          | 0.75730       | 0.79345     | 0.97511     | -             | -           | -     | -        |
+| YOLOv11 Obj Dect     | -         | -                | -             | -           | -           | 0.901         | 0.903       | 0.947 | 0.755    |
+| YOLOv11 Seg          | -         | -                | -             | -           | -           | 0.904         | 0.891       | 0.938 | 0.619    |
+
 Los cuadernos incluyen visualizaciones de los resultados de entrenamiento y ejemplos de inferencia. Los modelos entrenados se guardan en la carpeta `./models/` y los resultados de evaluación se guardan en la carpeta `./results/`.
 
 ## Contribuciones
