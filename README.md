@@ -7,27 +7,27 @@ Este repositorio contiene una colección de cuadernos Jupyter para detección y 
 El repositorio incluye los siguientes cuadernos:
 
 1. **EffiSegNet**:
-   - `effisegnet_seeds_train.py`: Cuaderno para entrenar el modelo EffiSegNet para segmentación de semillas.
-   - `effisegnet_seeds_test.py`: Cuaderno para realizar inferencia con el modelo EffiSegNet entrenado.
+   - `EffiSegNet - Seeds - Train.py`: Cuaderno para entrenar el modelo EffiSegNet para segmentación de semillas.
+   - `EffiSegNet - Seeds - Test.py`: Cuaderno para realizar inferencia con el modelo EffiSegNet entrenado.
 
 2. **ResUNet**:
-   - `resunet_seeds_train.py`: Cuaderno para entrenar el modelo ResUNet para segmentación de semillas.
-   - `resunet_seeds_test.py`: Cuaderno para realizar inferencia con el modelo ResUNet entrenado.
+   - `ResUNet - Seeds - Train.py`: Cuaderno para entrenar el modelo ResUNet para segmentación de semillas.
+   - `ResUNet - Seeds - Train.py`: Cuaderno para realizar inferencia con el modelo ResUNet entrenado.
 
 3. **YOLOv11**:
    - Detección de objetos:
-     - `yolov11_seeds_obj_dect_train.py`: Cuaderno para entrenar YOLOv11 para detección de semillas.
-     - `yolov11_seeds_obj_dect_test.py`: Cuaderno para realizar inferencia con YOLOv11 para detección de semillas.
+     - `YOLOv11 - Seeds - Obj Dect - Train.py`: Cuaderno para entrenar YOLOv11 para detección de semillas.
+     - `YOLOv11 - Seeds - Obj Dect - Test.py`: Cuaderno para realizar inferencia con YOLOv11 para detección de semillas.
    - Segmentación:
-     - `yolov11_seeds_seg_train.py`: Cuaderno para entrenar YOLOv11 para segmentación de semillas.
-     - `yolov11_seeds_seg_test.py`: Cuaderno para realizar inferencia con YOLOv11 para segmentación de semillas.
+     - `YOLOv11 - Seeds - Seg - Train.py`: Cuaderno para entrenar YOLOv11 para segmentación de semillas.
+     - `YOLOv11 - Seeds - Seg - Test.py`: Cuaderno para realizar inferencia con YOLOv11 para segmentación de semillas.
 
 ## Requisitos
 
 Para ejecutar estos cuadernos, se requiere lo siguiente:
 
-- Python 3.7 o superior
-- TensorFlow 2.x
+- Python 3.10 o superior
+- TensorFlow 2.15 o superior
 - PyTorch (para YOLOv11)
 - OpenCV
 - Matplotlib
@@ -82,7 +82,7 @@ Los cuadernos incluyen visualizaciones de los resultados de entrenamiento y ejem
 
 ## Licencia
 
-Este proyecto está bajo la licencia MIT. Consulta el archivo LICENSE para más información.
+Este proyecto está bajo la licencia BSD 2-Clause. Consulta el archivo LICENSE para más información.
 
 ---
 
