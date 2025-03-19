@@ -74,7 +74,7 @@ Para YOLOv11, la estructura es ligeramente diferente y se maneja a través del a
 
 ## Resultados
 
-A continuación se presentan las métricas de rendimiento esperadas para cada modelo en la base de datos de semillas:
+A continuación se presentan las medidas de rendimiento esperadas para cada modelo en la base de datos de semillas:
 
 | Modelo               | Variante | Dice Coefficient | Jaccard Index | Sensitivity | Specificity | Precision (P) | Recall (R)  | mAP50 | mAP50-95 |
 |----------------------|-----------|------------------|---------------|-------------|-------------|---------------|-------------|-------|----------|
