@@ -53,7 +53,7 @@ Para ejecutar estos cuadernos, se requiere lo siguiente:
 ### Inferencia
 
 1. Después de entrenar un modelo o descargar uno preentrenado, usa el cuaderno de inferencia correspondiente.
-2. Asegúrate de tener las imágenes de prueba en la carpeta `./datasets/Seeds/Test/images/` (para UNET, EffiSegNet y ResUNet) o en la carpeta correspondiente para YOLOv11.
+2. Asegúrate de tener las imágenes de prueba en la carpeta `./datasets/Seeds/Test/images/` (para UNet, EffiSegNet y ResUNet) o en la carpeta correspondiente para YOLOv11.
 3. Ejecuta el cuaderno de inferencia para obtener los resultados de detección o segmentación.
 
 ## Estructura de datos
