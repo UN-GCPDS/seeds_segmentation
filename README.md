@@ -6,15 +6,19 @@ Este repositorio contiene una colección de cuadernos Jupyter para detección y 
 
 El repositorio incluye los siguientes cuadernos:
 
-1. **EffiSegNet**:
+1. **UNet**:
+   - `UNet - Seeds - Train.py`: Cuaderno para entrenar el modelo UNet para segmentación de semillas.
+   - `UNet - Seeds - Train.py`: Cuaderno para realizar inferencia con el modelo UNet entrenado.
+
+2. **EffiSegNet**:
    - `EffiSegNet - Seeds - Train.py`: Cuaderno para entrenar el modelo EffiSegNet para segmentación de semillas.
    - `EffiSegNet - Seeds - Test.py`: Cuaderno para realizar inferencia con el modelo EffiSegNet entrenado.
 
-2. **ResUNet**:
+3. **ResUNet**:
    - `ResUNet - Seeds - Train.py`: Cuaderno para entrenar el modelo ResUNet para segmentación de semillas.
    - `ResUNet - Seeds - Train.py`: Cuaderno para realizar inferencia con el modelo ResUNet entrenado.
 
-3. **YOLOv11**:
+4. **YOLOv11**:
    - Detección de objetos:
      - `YOLOv11 - Seeds - Obj Dect - Train.py`: Cuaderno para entrenar YOLOv11 para detección de semillas.
      - `YOLOv11 - Seeds - Obj Dect - Test.py`: Cuaderno para realizar inferencia con YOLOv11 para detección de semillas.
@@ -49,7 +53,7 @@ Para ejecutar estos cuadernos, se requiere lo siguiente:
 ### Inferencia
 
 1. Después de entrenar un modelo o descargar uno preentrenado, usa el cuaderno de inferencia correspondiente.
-2. Asegúrate de tener las imágenes de prueba en la carpeta `./datasets/Seeds/Test/images/` (para EffiSegNet y ResUNet) o en la carpeta correspondiente para YOLOv11.
+2. Asegúrate de tener las imágenes de prueba en la carpeta `./datasets/Seeds/Test/images/` (para UNET, EffiSegNet y ResUNet) o en la carpeta correspondiente para YOLOv11.
 3. Ejecuta el cuaderno de inferencia para obtener los resultados de detección o segmentación.
 
 ## Estructura de datos
@@ -78,6 +82,8 @@ A continuación se presentan las medidas de rendimiento esperadas para cada mode
 
 | Modelo               | Variante | Dice Coefficient | Jaccard Index | Sensitivity | Specificity | Precision (P) | Recall (R)  | mAP50 | mAP50-95 |
 |----------------------|-----------|------------------|---------------|-------------|-------------|---------------|-------------|-------|----------|
+| UNet                 | 2c        | 0.67455          | 0.60085       | 0.76881     | 0.76881     | -             | -           | -     | -        |
+| UNet                 | 3c        | 0.59769          | 0.54479       | 0.60893     | 0.91768     | -             | -           | -     | -        |
 | EffiSegNet           | 2c        | 0.82524          | 0.77986       | 0.80327     | 0.97725     | -             | -           | -     | -        |
 | ResUNet              | 2c        | 0.96209          | 0.93151       | 0.95886     | 0.95886     | -             | -           | -     | -        |
 | ResUNet              | 3c        | 0.80689          | 0.75730       | 0.79345     | 0.97511     | -             | -           | -     | -        |
