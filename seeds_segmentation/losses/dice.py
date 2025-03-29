@@ -23,8 +23,9 @@ Dice Cofficient Loss
 import tensorflow as tf 
 from tensorflow.keras.losses import Loss
 from tensorflow.keras import backend as K
-from tensorflow.keras.utils import to_categorical
+from tensorflow.keras.utils import to_categorical, register_keras_serializable
 
+@register_keras_serializable(package="my_custom_losses")
 class DiceCoefficient(Loss):
     def __init__(self, smooth=1., target_class= None, name='DiceCoefficient', **kwargs):
         self.smooth = smooth
@@ -49,7 +50,7 @@ class DiceCoefficient(Loss):
         return {**base_config, "smooth": self.smooth,
                 "target_class":self.target_class}
 
-
+@register_keras_serializable(package="my_custom_losses")
 class SparseCategoricalDiceCoefficient(DiceCoefficient):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)

@@ -13,12 +13,13 @@ Specificity Metric
 """
 
 from tensorflow.keras.metrics import Metric
-from tensorflow.keras.utils import to_categorical
+from tensorflow.keras.utils import to_categorical, register_keras_serializable
 from tensorflow.keras import backend as K
 import tensorflow as tf 
 
 from .sensitivity import Sensitivity
 
+@register_keras_serializable(package="my_custom_metrics")
 class Specificity(Metric):
 
     def __init__(self, target_class=None, name='Specificity',**kwargs):
@@ -49,7 +50,7 @@ class Specificity(Metric):
         base_config = super().get_config()
         return {**base_config, "target_class":self.target_class}
 
-
+@register_keras_serializable(package="my_custom_metrics")
 class SparseCategoricalSpecificity(Specificity):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)

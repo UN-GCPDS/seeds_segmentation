@@ -21,11 +21,11 @@ Dice Cofficient Metric
 """
 
 from tensorflow.keras.metrics import Metric
-from tensorflow.keras.utils import to_categorical
+from tensorflow.keras.utils import to_categorical, register_keras_serializable
 from tensorflow.keras import backend as K
 import tensorflow as tf 
 
-
+@register_keras_serializable(package="my_custom_metrics")
 class DiceCoefficientMetric(Metric):
 
     def __init__(self,smooth=1.0, target_class=None, name='DiceCoefficientMetric',**kwargs):
@@ -62,7 +62,7 @@ class DiceCoefficientMetric(Metric):
         return {**base_config, "smooth": self.smooth,
                 "target_class":self.target_class}
 
-
+@register_keras_serializable(package="my_custom_metrics")
 class SparseCategoricalDiceCoefficientMetric(DiceCoefficientMetric):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)

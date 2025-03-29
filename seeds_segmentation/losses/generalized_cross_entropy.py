@@ -15,7 +15,9 @@ Generalized Cross-Entropy
 
 from tensorflow.keras.losses import Loss
 from tensorflow.keras import backend as K
+from tensorflow.keras.utils import register_keras_serializable
 
+@register_keras_serializable(package="my_custom_losses")
 class GeneralizedCrossEntropy(Loss):
     def __init__(self, q=1, name='GeneralizedCrossEntropy',**kwargs):
         self.q = q
