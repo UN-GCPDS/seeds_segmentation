@@ -5,10 +5,14 @@ setup(
     name="seeds_segmentation",
     version="0.0.0",
     description="Librería para segmentación de semillas",
-    author="UN-GCPDS-Camilo",
+    author="Camilo Pelaez Garcia",
     url="https://github.com/UN-GCPDS/seeds_segmentation",
-    packages=find_packages(),
+    packages=['models', 'metrics', 'losses'],
     install_requires=[
-        # Lista de dependencias necesarias
+        'scikit-image',
+        'matplotlib',
+        'gdown',
+        'opencv-python',
+        'scikit-learn'
     ],
 )
