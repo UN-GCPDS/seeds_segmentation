@@ -7,7 +7,7 @@ setup(
     description="Librería para segmentación de semillas",
     author="Camilo Pelaez Garcia",
     url="https://github.com/UN-GCPDS/seeds_segmentation",
-    packages=['models', 'metrics', 'losses'],
+    packages=find_packages(),
     install_requires=[
         'scikit-image',
         'matplotlib',
