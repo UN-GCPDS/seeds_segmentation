@@ -78,7 +78,22 @@ Para YOLOv11, la estructura es ligeramente diferente y se maneja a través del a
 
 ## Resultados
 
-A continuación se presentan las medidas de rendimiento esperadas para cada modelo en la base de datos de semillas:
+A continuación se presentan las medidas de rendimiento obtenidas para cada modelo en la base de datos de semillas de tomate del Grupo GPDS con data Aumentation:
+
+| Modelo               | Variante | Dice Coefficient | Jaccard Index | Sensitivity | Specificity | Precision (P) | Recall (R)  | mAP50 | mAP50-95 |
+|----------------------|-----------|------------------|---------------|-------------|-------------|---------------|-------------|-------|----------|
+| UNet                 | 2c        | 0.95017          | 0.91303       | 0.94590     | 0.94590     | -             | -           | -     | -        |
+| UNet                 | 3c        | 0.69321          | 0.63376       | 0.74132     | 0.94701     | -             | -           | -     | -        |
+| ResUNet              | 2c        | 0.94122          | 0.90124       | 0.93756     | 0.93756     | -             | -           | -     | -        |
+| ResUNet              | 3c        | 0.73500          | 0.67653       | 0.74030     | 0.95479     | -             | -           | -     | 
+-        |
+| FCN                  | 2c        | 0.95103          | 0.91400       | 0.95250     | 0.95250     | -             | -           | -     | -        |
+| FCN                  | 3c        | 0.81283          | 0.75781       | 0.77140     | 0.96060     | -             | -           | -     |
+-        |
+| SegUNet              | 2c        | -------          | -------       | -------     | -------     | -             | -           | -     | -        |
+| SegUNet              | 3c        | -------          | -------       | -------     | -------     | -             | -           | -     |  
+
+A continuación se presentan las medidas de rendimiento esperadas para cada modelo en la base de datos de semillas a modo de ejemplo:
 
 | Modelo               | Variante | Dice Coefficient | Jaccard Index | Sensitivity | Specificity | Precision (P) | Recall (R)  | mAP50 | mAP50-95 |
 |----------------------|-----------|------------------|---------------|-------------|-------------|---------------|-------------|-------|----------|

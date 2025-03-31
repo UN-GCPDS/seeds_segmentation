@@ -6,6 +6,8 @@ setup(
     version="0.0.0",
     description="Librería para segmentación de semillas",
     author="Camilo Pelaez Garcia",
+    author_email="cpelaezg@unal.edu.co",
+    license='Simplified BSD License',
     url="https://github.com/UN-GCPDS/seeds_segmentation",
     packages=find_packages(),
     install_requires=[
