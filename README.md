@@ -93,12 +93,12 @@ A continuación se presentan las medidas de rendimiento obtenidas para cada mode
 | SegNet              | 2c        | -------          | -------       | -------     | -------     | -             | -           | -     | -        |
 | SegNet              | 3c        | -------          | -------       | -------     | -------     | -             | -           | -     |
 -        |
-| UNetMobV2           | 2c        | -------          | -------       | -------     | -------     | -             | -           | -     | -        |
-| UNetMobV2           | 3c        | -------          | -------       | -------     | -------     | -             | -           | -     | -        |
-| ResUNetMobV2        | 2c        | -------          | -------       | -------     | -------     | -             | -           | -     | -        |
-| ResUNetMobV2        | 3c        | -------          | -------       | -------     | -------     | -             | -           | -     | 
+| UNetMobV2           | 2c        | 0.96440          | 0.93539       | 0.96709     | 0.96709     | -             | -           | -     | -        |
+| UNetMobV2           | 3c        | 0.84108          | 0.79313       | 0.79925     | 0.97315     | -             | -           | -     | -        |
+| ResUNetMobV2        | 2c        | 0.96323          | 0.93325       | 0.96970     | 0.96970     | -             | -           | -     | -        |
+| ResUNetMobV2        | 3c        | 0.82938          | 0.78048       | 0.80055     | 0.97597     | -             | -           | -     | 
 -        |
-| FCNMobV2            | 2c        | -------          | -------       | -------     | -------     | -             | -           | -     | -        |
+| FCNMobV2            | 2c        | 0.96638          | 0.93864       | 0.96893     | 0.96893     | -             | -           | -     | -        |
 | FCNMobV2            | 3c        | -------          | -------       | -------     | -------     | -             | -           | -     | 
 
 A continuación se presentan las medidas de rendimiento esperadas para cada modelo en la base de datos de semillas a modo de ejemplo:
