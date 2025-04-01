@@ -41,6 +41,15 @@ class ResBlock(tf.keras.layers.Layer):
         x = layers.Activation('relu', name=f'{self.name}_Act01')(x)
         return x
 
+    def get_config(self):
+        config = super(ResBlock, self).get_config()
+        config.update({
+            "units": self.units,
+            "kernel_initializer": self.kernel_initializer,
+            "name": self.name,
+        })
+        return config
+
 def kernel_initializer(seed):
     return initializers.GlorotUniform(seed=seed)
 
@@ -109,7 +118,7 @@ def get_decoder(skips,dropout=0):
     return x
 
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-def res_unet_mobilenetv2(input_shape=(128,128,3), out_channels=1, out_ActFunction='sigmoid', trainable = False, name="unetMobile"):
+def res_unet_mobilenetv2(input_shape=(128,128,3), out_channels=1, out_ActFunction='sigmoid', trainable = False, name="resUNetMobileNetV2"):
     input = tf.keras.layers.Input(shape=input_shape)
 
     skips = get_encoder(input_shape=list(input.shape[1:]),  trainable = trainable)(input)

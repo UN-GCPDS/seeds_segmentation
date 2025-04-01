@@ -4,4 +4,4 @@ Seed Segmentation
 ==========================
 """
 # Import models from the submodule
-from .models import unet_baseline, fcn_baseline, res_unet_baseline, unet_mobilenetv2, res_unet_mobilenetv2, mobilenetv2
+from .models import fcn_baseline, unet_baseline, res_unet_baseline, fcn_mobilenetv2, unet_mobilenetv2, res_unet_mobilenetv2, mobilenetv2

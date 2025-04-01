@@ -90,8 +90,16 @@ A continuación se presentan las medidas de rendimiento obtenidas para cada mode
 | FCN                  | 2c        | 0.95103          | 0.91400       | 0.95250     | 0.95250     | -             | -           | -     | -        |
 | FCN                  | 3c        | 0.81283          | 0.75781       | 0.77140     | 0.96060     | -             | -           | -     |
 -        |
-| SegUNet              | 2c        | -------          | -------       | -------     | -------     | -             | -           | -     | -        |
-| SegUNet              | 3c        | -------          | -------       | -------     | -------     | -             | -           | -     |  
+| SegNet              | 2c        | -------          | -------       | -------     | -------     | -             | -           | -     | -        |
+| SegNet              | 3c        | -------          | -------       | -------     | -------     | -             | -           | -     |
+-        |
+| UNetMobV2           | 2c        | -------          | -------       | -------     | -------     | -             | -           | -     | -        |
+| UNetMobV2           | 3c        | -------          | -------       | -------     | -------     | -             | -           | -     | -        |
+| ResUNetMobV2        | 2c        | -------          | -------       | -------     | -------     | -             | -           | -     | -        |
+| ResUNetMobV2        | 3c        | -------          | -------       | -------     | -------     | -             | -           | -     | 
+-        |
+| FCNMobV2            | 2c        | -------          | -------       | -------     | -------     | -             | -           | -     | -        |
+| FCNMobV2            | 3c        | -------          | -------       | -------     | -------     | -             | -           | -     | 
 
 A continuación se presentan las medidas de rendimiento esperadas para cada modelo en la base de datos de semillas a modo de ejemplo:
 
