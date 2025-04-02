@@ -95,7 +95,7 @@ A continuación se presentan las medidas de rendimiento obtenidas para cada mode
 | ResUNetMobV2        | 2c       | 0.96323          | 0.93325       | 0.96970     | 0.96970     | -             | -           | -     | -        |
 | ResUNetMobV2        | 3c       | 0.82938          | 0.78048       | 0.80055     | 0.97597     | -             | -           | -     | -        |
 | FCNMobV2            | 2c       | 0.96638          | 0.93864       | 0.96893     | 0.96893     | -             | -           | -     | -        |
-| FCNMobV2            | 3c       | -------          | -------       | -------     | -------     | -             | -           | -     | -        |
+| FCNMobV2            | 3c       | 0.69750          | 0.63719       | 0.76682     | 0.94443     | -             | -           | -     | -        |
 
 A continuación se presentan las medidas de rendimiento esperadas para cada modelo en la base de datos de semillas a modo de ejemplo:
 
