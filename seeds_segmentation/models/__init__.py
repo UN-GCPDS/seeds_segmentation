@@ -12,3 +12,4 @@ from .mobilenetv2_fcn import fcn_mobilenetv2
 from .mobilenetv2_unet import unet_mobilenetv2
 from .mobilenetv2_res_unet import res_unet_mobilenetv2
 from .vgg16_unet import unet_vgg16
+from .vgg16_res_unet import res_unet_vgg16
