@@ -80,6 +80,7 @@ Para YOLOv11, la estructura es ligeramente diferente y se maneja a través del a
 
 A continuación se presentan las medidas de rendimiento obtenidas para cada modelo en la base de datos de semillas de tomate del Grupo GPDS con data Aumentation:
 
+
 | Modelo               | Variante | Dice Coefficient | Jaccard Index | Sensitivity | Specificity | 
 |----------------------|----------|------------------|---------------|-------------|-------------|
 | UNet                | 2c       | 0.95017          | 0.91303       | 0.94590     | 0.94590      | 
@@ -114,6 +115,41 @@ Para finalizar se presenta las medidas de deteccion del modelo YOLOv11m:
 |----------------------|----------|---------------|-------------|-------|----------|
 | YOLOv11 (Obj Dect)   | default  | 0.901         | 0.903       | 0.947 | 0.755    |
 
+=======
+| Modelo               | Variante | Dice Coefficient | Jaccard Index | Sensitivity | Specificity | Precision (P) | Recall (R)  | mAP50 | mAP50-95 |
+|----------------------|----------|------------------|---------------|-------------|-------------|---------------|-------------|-------|----------|
+| UNet                | 2c       | 0.95020          | 0.91299       | 0.94734     | 0.94734     | 0.95506     | 0.94734     | 0.99153     | 0.85805     |
+| UNet                | 3c       | 0.69584          | 0.63568       | 0.74289     | 0.94567     | 0.72038     | 0.74289     | 0.66384     | 0.52034     |
+| ResUNet             | 2c       | 0.94122          | 0.90118       | 0.93793     | 0.93793     | 0.94804     | 0.93793     | 0.96610     | 0.83644     |
+| ResUNet             | 3c       | 0.74074          | 0.68176       | 0.74376     | 0.95489     | 0.75792     | 0.74376     | 0.72881     | 0.57090     |
+| FCN                 | 2c       | 0.95105          | 0.91409       | 0.95244     | 0.95244     | 0.95094     | 0.95244     | 0.99153     | 0.85763     |
+| FCN                 | 3c       | 0.82072          | 0.76505       | 0.76861     | 0.96151     | 0.78149     | 0.76861     | 0.83616     | 0.65932     |
+| SegNet              | 2c       | -------          | -------       | -------     | -------     | -------     | -------     | -------     | -------     |
+| SegNet              | 3c       | -------          | -------       | -------     | -------     | -------     | -------     | -------     | -------     |
+| MoblilenetV2        | 2c       | 0.94514          | 0.90328       | 0.95115     | 0.95115     | 0.94017     | 0.95115     | 0.99153     | 0.84195     |
+| MoblilenetV2        | 3c       | 0.82374          | 0.76559       | 0.77379     | 0.96243     | 0.76899     | 0.77379     | 0.85876     | 0.65565     |
+| UNetMobV2           | 2c       | 0.96443          | 0.93545       | 0.96685     | 0.96685     | 0.96280     | 0.96685     | 1.00000     | 0.90254     |
+| UNetMobV2           | 3c       | 0.83767          | 0.78960       | 0.79887     | 0.97337     | 0.80216     | 0.79887     | 0.87288     | 0.70198     |
+| ResUNetMobV2        | 2c       | 0.96339          | 0.93345       | 0.96966     | 0.96966     | 0.95794     | 0.96966     | 1.00000     | 0.89915     |
+| ResUNetMobV2        | 3c       | 0.82117          | 0.77275       | 0.80076     | 0.97651     | 0.79614     | 0.80076     | 0.86723     | 0.86723     |
+| FCNMobV2            | 2c       | 0.96650          | 0.93888       | 0.96667     | 0.96667     | 0.96715     | 0.96667     | 1.00000     | 0.90975     |
+| FCNMobV2            | 3c       | 0.69838          | 0.63728       | 0.76532     | 0.94403     | 0.71174     | 0.76532     | 0.71469     | 0.53446     |
+| UNetVGG16           | 2c       | 0.96416          | 0.93500       | 0.96449     | 0.96449     | 0.96474     | 0.96449     | 1.00000     | 0.90297     |
+| UNetVGG16           | 3c       | 0.81483          | 0.76733       | 0.79489     | 0.97231     | 0.80621     | 0.79489     | 0.85593     | 0.68192     |
+| ResUNetVGG16        | 2c       | 0.96342          | 0.93353       | 0.96676     | 0.96676     | 0.96070     | 0.96676     | 1.00000     | 0.89830     |
+| ResUNetVGG16        | 3c       | -------          | -------       | -------     | -------     | -------     | -------     | -------     | -------     |
+
+A continuación se presentan las medidas de rendimiento esperadas para cada modelo en la base de datos de semillas a modo de ejemplo:
+
+| Modelo               | Variante | Dice Coefficient | Jaccard Index | Sensitivity | Specificity | Precision (P) | Recall (R)  | mAP50 | mAP50-95 |
+|----------------------|-----------|------------------|---------------|-------------|-------------|---------------|-------------|-------|----------|
+| UNet                 | 2c        | 0.67455          | 0.60085       | 0.76881     | 0.76881     | -             | -           | -     | -        |
+| UNet                 | 3c        | 0.59769          | 0.54479       | 0.60893     | 0.91768     | -             | -           | -     | -        |
+| EffiSegNet           | 2c        | 0.82524          | 0.77986       | 0.80327     | 0.97725     | -             | -           | -     | -        |
+| ResUNet              | 2c        | 0.96209          | 0.93151       | 0.95886     | 0.95886     | -             | -           | -     | -        |
+| ResUNet              | 3c        | 0.80689          | 0.75730       | 0.79345     | 0.97511     | -             | -           | -     | -        |
+| YOLOv11 (Obj Dect)     | default   | -                | -             | -           | -           | 0.901         | 0.903       | 0.947 | 0.755    |
+| YOLOv11 (Seg)          | segmentation | -                | -             | -           | -           | 0.904         | 0.891       | 0.938 | 0.619    |
 
 Los cuadernos incluyen visualizaciones de los resultados de entrenamiento y ejemplos de inferencia. Los modelos entrenados se guardan en la carpeta `./models/` y los resultados de evaluación se guardan en la carpeta `./results/`.
 
