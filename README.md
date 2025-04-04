@@ -80,6 +80,42 @@ Para YOLOv11, la estructura es ligeramente diferente y se maneja a través del a
 
 A continuación se presentan las medidas de rendimiento obtenidas para cada modelo en la base de datos de semillas de tomate del Grupo GPDS con data Aumentation:
 
+
+| Modelo               | Variante | Dice Coefficient | Jaccard Index | Sensitivity | Specificity | 
+|----------------------|----------|------------------|---------------|-------------|-------------|
+| UNet                | 2c       | 0.95017          | 0.91303       | 0.94590     | 0.94590      | 
+| UNet                | 3c       | 0.69321          | 0.63376       | 0.74132     | 0.94701      | 
+| ResUNet             | 2c       | 0.94122          | 0.90124       | 0.93756     | 0.93756      | 
+| ResUNet             | 3c       | 0.73500          | 0.67653       | 0.74030     | 0.95479      | 
+| FCN                 | 2c       | 0.95103          | 0.91400       | 0.95250     | 0.95250      |
+| FCN                 | 3c       | 0.81283          | 0.75781       | 0.77140     | 0.96060      | 
+| MoblilenetV2        | 2c       | 0.94484          | 0.90277       | 0.95204     | 0.95204      | 
+| MoblilenetV2        | 3c       | 0.81997          | 0.76109       | 0.77776     | 0.96114      | 
+| UNetMobV2           | 2c       | 0.96440          | 0.93539       | 0.96709     | 0.96709      | 
+| UNetMobV2           | 3c       | 0.84108          | 0.79313       | 0.79925     | 0.97315      | 
+| ResUNetMobV2        | 2c       | 0.96323          | 0.93325       | 0.96970     | 0.96970      | 
+| ResUNetMobV2        | 3c       | 0.82938          | 0.78048       | 0.80055     | 0.97597      | 
+| FCNMobV2            | 2c       | 0.96638          | 0.93864       | 0.96893     | 0.96893      | 
+| FCNMobV2            | 3c       | 0.69750          | 0.63719       | 0.76682     | 0.94443      | 
+
+A continuación se presentan las medidas de rendimiento esperadas para cada modelo de segmentación en la base de datos de semillas:
+
+| Modelo               | Variante     | Dice Coefficient | Jaccard Index | Sensitivity | Specificity | 
+|----------------------|--------------|------------------|---------------|-------------|-------------|
+| UNet                 | 2c           | 0.67455          | 0.60085       | 0.76881     | 0.76881     | 
+| UNet                 | 3c           | 0.59769          | 0.54479       | 0.60893     | 0.91768     | 
+| EffiSegNet           | 2c           | 0.82524          | 0.77986       | 0.80327     | 0.97725     | 
+| ResUNet              | 2c           | 0.96209          | 0.93151       | 0.95886     | 0.95886     | 
+| ResUNet              | 3c           | 0.80689          | 0.75730       | 0.79345     | 0.97511     | 
+| YOLOv11 (Seg)        | segmentation | 0.88057          | 0.78972       | 0.95254     | 0.99072     |
+
+Para finalizar se presenta las medidas de deteccion del modelo YOLOv11m:
+
+| Modelo               | Variante | Precision (P) | Recall (R)  | mAP50 | mAP50-95 |
+|----------------------|----------|---------------|-------------|-------|----------|
+| YOLOv11 (Obj Dect)   | default  | 0.901         | 0.903       | 0.947 | 0.755    |
+
+=======
 | Modelo               | Variante | Dice Coefficient | Jaccard Index | Sensitivity | Specificity | Precision (P) | Recall (R)  | mAP50 | mAP50-95 |
 |----------------------|----------|------------------|---------------|-------------|-------------|---------------|-------------|-------|----------|
 | UNet                | 2c       | 0.95020          | 0.91299       | 0.94734     | 0.94734     | 0.95506     | 0.94734     | 0.99153     | 0.85805     |
