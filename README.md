@@ -111,6 +111,7 @@ A continuación se presentan las medidas de rendimiento esperadas para cada mode
 Para finalizar se presenta las medidas de deteccion del modelo YOLOv11m:
 
 | Modelo               | Variante | Precision (P) | Recall (R)  | mAP50 | mAP50-95 |
+|----------------------|----------|---------------|-------------|-------|----------|
 | YOLOv11 (Obj Dect)   | default  | 0.901         | 0.903       | 0.947 | 0.755    |
 
 
