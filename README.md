@@ -137,7 +137,7 @@ Para finalizar se presenta las medidas de deteccion del modelo YOLOv11m:
 | UNetVGG16           | 2c       | 0.96416          | 0.93500       | 0.96449     | 0.96449     | 0.96474     | 0.96449     | 1.00000     | 0.90297     |
 | UNetVGG16           | 3c       | 0.81483          | 0.76733       | 0.79489     | 0.97231     | 0.80621     | 0.79489     | 0.85593     | 0.68192     |
 | ResUNetVGG16        | 2c       | 0.96342          | 0.93353       | 0.96676     | 0.96676     | 0.96070     | 0.96676     | 1.00000     | 0.89830     |
-| ResUNetVGG16        | 3c       | -------          | -------       | -------     | -------     | -------     | -------     | -------     | -------     |
+| ResUNetVGG16        | 3c       | 0.68708          | 0.60992       | 0.69209     | 0.95733     | 0.71942     | 0.69209     | 0.67232     | 0.44831     |
 
 A continuación se presentan las medidas de rendimiento esperadas para cada modelo en la base de datos de semillas a modo de ejemplo:
 
