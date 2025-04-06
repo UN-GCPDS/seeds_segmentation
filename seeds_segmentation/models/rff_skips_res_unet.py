@@ -6,7 +6,7 @@ from functools import partial
 
 import tensorflow as tf
 from tensorflow.keras import Model, layers, regularizers
-from seeds_segmentation import ConvRFF_block
+from seeds_segmentation.layers.convRFF import ConvRFF_block
 
 def upsample_conv(filters, kernel_size, strides, padding, kernel_initializer, name, kernel_regularizer):
     return layers.Conv2DTranspose(filters, kernel_size,

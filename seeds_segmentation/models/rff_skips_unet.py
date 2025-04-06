@@ -6,7 +6,7 @@ from functools import partial
 
 import tensorflow as tf
 from tensorflow.keras import Model, layers, regularizers
-from seeds_segmentation import ConvRFF_block
+from seeds_segmentation.layers.convRFF import ConvRFF_block
 
 DefaultConv2D = partial(layers.Conv2D,
                         kernel_size=3, activation='relu', padding="same")
