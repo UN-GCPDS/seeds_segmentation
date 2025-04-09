@@ -78,7 +78,7 @@ Para YOLOv11, la estructura es ligeramente diferente y se maneja a través del a
 
 ## Resultados
 
-A continuación se presentan las medidas de rendimiento obtenidas para cada modelo en la base de datos de semillas de tomate del Grupo GPDS con data Aumentation:
+A continuación se presentan las medidas de rendimiento obtenidas para cada modelo en la base de datos de semillas del Grupo GPDS con data Aumentation:
 
 | Modelo               | Variante | Dice Coefficient | Jaccard Index | Sensitivity | Specificity | Precision (P) | Recall (R)  | mAP50 | mAP50-95 |
 |----------------------|----------|------------------|---------------|-------------|-------------|---------------|-------------|-------|----------|
@@ -96,12 +96,18 @@ A continuación se presentan las medidas de rendimiento obtenidas para cada mode
 | ResUNetMobV2        | 3c       | 0.82117          | 0.77275       | 0.80076     | 0.97651     | 0.79614     | 0.80076     | 0.86723     | 0.86723     |
 | FCNMobV2            | 2c       | 0.96650          | 0.93888       | 0.96667     | 0.96667     | 0.96715     | 0.96667     | 1.00000     | 0.90975     |
 | FCNMobV2            | 3c       | 0.69838          | 0.63728       | 0.76532     | 0.94403     | 0.71174     | 0.76532     | 0.71469     | 0.53446     |
+| VGG16               | 2c       | 0.90330          | 0.84424       | 0.92208     | 0.92208     | 0.88786     | 0.92208     | 0.94915     | 0.73263     |
+| VGG16               | 3c       | 0.74920          | 0.67403       | 0.69309     | 0.91286     | 0.71485     | 0.69309     | 0.68079     | 0.52458     |
 | UNetVGG16           | 2c       | 0.96416          | 0.93500       | 0.96449     | 0.96449     | 0.96474     | 0.96449     | 1.00000     | 0.90297     |
 | UNetVGG16           | 3c       | 0.81483          | 0.76733       | 0.79489     | 0.97231     | 0.80621     | 0.79489     | 0.85593     | 0.68192     |
 | ResUNetVGG16        | 2c       | 0.96342          | 0.93353       | 0.96676     | 0.96676     | 0.96070     | 0.96676     | 1.00000     | 0.89830     |
 | ResUNetVGG16        | 3c       | 0.68708          | 0.60992       | 0.69209     | 0.95733     | 0.71942     | 0.69209     | 0.67232     | 0.44831     |
-| VGG16               | 2c       | 0.90330          | 0.84424       | 0.92208     | 0.92208     | 0.88786     | 0.92208     | 0.94915     | 0.73263     |
-| VGG16               | 3c       | 0.74920          | 0.67403       | 0.69309     | 0.91286     | 0.71485     | 0.69309     | 0.68079     | 0.52458     |
+| RFFSkipsUNet        | 2c       | 0.94945          | 0.91221       | 0.94936     | 0.94936     | 0.95157     | 0.94936     | 0.99153     | 0.85890     |
+| RFFSkipsUNet        | 3c       | 0.66067          | 0.59921       | 0.74496     | 0.94740     | 0.66698     | 0.74496     | 0.59887     | 0.48842     |
+| RFFSkipsResUNet     | 2c       | 0.94442          | 0.90464       | 0.94655     | 0.94655     | 0.94446     | 0.94655     | 0.98729     | 0.83941     |
+| RFFSkipsResUNet     | 3c       | 0.57550          | 0.49319       | 0.65981     | 0.87884     | 0.63798     | 0.65981     | 0.57062     | 0.32175     |
+| RFFSkipsFCN         | 2c       | 0.94639          | 0.90616       | 0.94974     | 0.94974     | 0.94402     | 0.94974     | 0.99153     | 0.84280     |
+| RFFSkipsFCN         | 3c       | 0.75203          | 0.69097       | 0.75843     | 0.96198     | 0.76057     | 0.75843     | 0.73729     | 0.57599     |
 
 A continuación se presentan las medidas de rendimiento esperadas para cada modelo de segmentación en la base de datos de semillas:
 
