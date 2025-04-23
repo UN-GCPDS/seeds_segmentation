@@ -45,14 +45,14 @@ def fcn_rff_skips(input_shape=(128,128,3), name='FCN_RFF', out_channels=1, out_A
     x =  layers.BatchNormalization(name='Batch30')(x)
     x = level_1 = DefaultPooling(name='Pool30')(x) # 32x32 -> 16x16
 
-    level_1 =  ConvRFF_block(level_1, deepth=64, name='01',**kwargs_convRFF)
+    level_1 =  ConvRFF_block(level_1, deepth=64, block_id='01',**kwargs_convRFF)
 
     x =  DefaultConv2D(128,kernel_initializer=kernel_initializer(67),kernel_regularizer=k_r,name='Conv40')(x)
     x =  DefaultConv2D(128,kernel_initializer=kernel_initializer(89),kernel_regularizer=k_r,name='Conv41')(x)
     x =  layers.BatchNormalization(name='Batch40')(x)
     x = level_2 = DefaultPooling(name='Pool40')(x) # 16x16 -> 8x8
 
-    level_2 =  ConvRFF_block(level_2, deepth=128, name='02',**kwargs_convRFF)
+    level_2 =  ConvRFF_block(level_2, deepth=128, block_id='02',**kwargs_convRFF)
 
     x =  DefaultConv2D(256,kernel_initializer=kernel_initializer(7),kernel_regularizer=k_r,name='Conv50')(x)
     x =  DefaultConv2D(256,kernel_initializer=kernel_initializer(23),kernel_regularizer=k_r,name='Conv51')(x)

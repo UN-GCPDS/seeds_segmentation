@@ -37,7 +37,7 @@ def unet_rff_skips(input_shape=(128,128,3), name='UNET_RFF', out_channels=1, out
     x =  layers.BatchNormalization(name='Batch11')(x)
     x = DefaultPooling(name='Pool10')(x) # 128x128 -> 64x64
 
-    level_1 =  ConvRFF_block(level_1,deepth=8,name='01',kernel_regularizer=k_r,**kwargs_convRFF)
+    level_1 =  ConvRFF_block(level_1,deepth=8,block_id='01',kernel_regularizer=k_r,**kwargs_convRFF)
 
     x =  DefaultConv2D(16,kernel_initializer=kernel_initializer(56),kernel_regularizer=k_r,name='Conv20')(x)
     x =  layers.BatchNormalization(name='Batch20')(x)
@@ -45,7 +45,7 @@ def unet_rff_skips(input_shape=(128,128,3), name='UNET_RFF', out_channels=1, out
     x =  layers.BatchNormalization(name='Batch22')(x)
     x = DefaultPooling(name='Pool20')(x) # 64x64 -> 32x32
 
-    level_2 = ConvRFF_block(level_2,deepth=16,kernel_regularizer=k_r, name='02',**kwargs_convRFF)
+    level_2 = ConvRFF_block(level_2,deepth=16,kernel_regularizer=k_r, block_id='02',**kwargs_convRFF)
 
     x =  DefaultConv2D(32,kernel_initializer=kernel_initializer(87),kernel_regularizer=k_r,name='Conv30')(x)
     x =  layers.BatchNormalization(name='Batch30')(x)
@@ -53,7 +53,7 @@ def unet_rff_skips(input_shape=(128,128,3), name='UNET_RFF', out_channels=1, out
     x =  layers.BatchNormalization(name='Batch31')(x)
     x = DefaultPooling(name='Pool30')(x) # 32x32 -> 16x16
 
-    level_3 = ConvRFF_block(level_3,deepth=32,kernel_regularizer=k_r, name='03',**kwargs_convRFF)
+    level_3 = ConvRFF_block(level_3,deepth=32,kernel_regularizer=k_r, block_id='03',**kwargs_convRFF)
 
     x = DefaultConv2D(64,kernel_initializer=kernel_initializer(79),kernel_regularizer=k_r,name='Conv40')(x)
     x =  layers.BatchNormalization(name='Batch40')(x)
@@ -61,7 +61,7 @@ def unet_rff_skips(input_shape=(128,128,3), name='UNET_RFF', out_channels=1, out
     x =  layers.BatchNormalization(name='Batch41')(x)
     x =  DefaultPooling(name='Pool40')(x) # 16x16 -> 8x8
 
-    level_4 = ConvRFF_block(level_4,deepth=64,kernel_regularizer=k_r,name='04',**kwargs_convRFF)
+    level_4 = ConvRFF_block(level_4,deepth=64,kernel_regularizer=k_r,block_id='04',**kwargs_convRFF)
 
     #Decoder
     x = DefaultConv2D(128,kernel_initializer=kernel_initializer(89),kernel_regularizer=k_r,name='Conv50')(x)
