@@ -146,13 +146,13 @@ class ConvRFF(tf.keras.layers.Layer):
     
 
 
-def ConvRFF_block(x, deepth, mul_dim=3, name='01', trainable_W=True,
+def ConvRFF_block(x, deepth, mul_dim=3, block_id='01', trainable_W=True,
                   kernel_size=3, kernel_regularizer=None):
 
     phi_units = np.round(deepth*mul_dim).astype(np.uint32)
     x = ConvRFF(output_dim=phi_units, kernel_size=kernel_size,
                 padding="SAME", trainable_scale=False, 
-                trainable_W=trainable_W, name=f'ConvRFF_{name}', 
+                trainable_W=trainable_W, name=f'ConvRFF_{block_id}', 
                 mass=True,
                 kernel_regularizer=kernel_regularizer)(x)
     return x 
