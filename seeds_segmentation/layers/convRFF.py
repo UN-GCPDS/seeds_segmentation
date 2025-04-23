@@ -103,13 +103,13 @@ class ConvRFF(tf.keras.layers.Layer):
 
         if self.scale is None:
             if self.initializer == 'gaussian':
-                self.scale = np.sqrt((input_dim*self.kernel_size**2)/2.0)
+                self.scale = float(np.sqrt((input_dim * self.kernel_size ** 2) / 2.0))
             elif self.initializer == 'laplacian':
                 self.scale = 1.0
-            else: 
+            else:
                 raise ValueError(f'Unsupported kernel initializer {self.initializer}')
-
         print(f"[BUILD] Computed self.scale: {self.scale} (type: {type(self.scale)})")
+        assert isinstance(self.scale, float), f"scale must be float, got {type(self.scale)}"
 
         self.kernel_scale = self.add_weight(
             name='kernel_scale',
