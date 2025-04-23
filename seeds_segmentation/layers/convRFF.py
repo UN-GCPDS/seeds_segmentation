@@ -4,6 +4,8 @@ import tensorflow_probability as tfp
 
 
 def _get_random_features_initializer(initializer, shape,seed):
+    print(f"[DEBUG] _get_random_features_initializer - initializer={initializer}, shape={shape}, seed={seed}")
+
     def _get_cauchy_samples(loc, scale, shape):
         np.random.seed(seed) 
         probs = np.random.uniform(low=0., high=1., size=shape)
@@ -11,12 +13,14 @@ def _get_random_features_initializer(initializer, shape,seed):
 
     if isinstance(initializer,str):
         if initializer == "gaussian":
+            print("[DEBUG] Gaussian initializer selected.")
             return tf.keras.initializers.RandomNormal(stddev=1.0,seed=seed)
         elif initializer == "laplacian":
+            print("[DEBUG] Laplacian initializer selected.")
             return tf.keras.initializers.Constant(
                 _get_cauchy_samples(loc=0.0, scale=1.0, shape=shape))
-        else: 
-            raise ValueError(f'Unsupported kernel initializer {initializer}')
+
+    raise ValueError(f'Unsupported kernel initializer {initializer}')
 
 
 class ConvRFF(tf.keras.layers.Layer):
@@ -48,6 +52,7 @@ class ConvRFF(tf.keras.layers.Layer):
         self.seed = seed
         self.mass = mass
 
+        print(f"[INIT] ConvRFF - output_dim={output_dim}, kernel={kernel}, scale={scale}, seed={seed}, trainable_W={trainable_W}")
 
     def get_config(self):
         config = super().get_config().copy()
@@ -74,6 +79,9 @@ class ConvRFF(tf.keras.layers.Layer):
                                                                      input_dim,
                                                                      self.output_dim),
                                                                seed=self.seed)
+    
+        print(f"[BUILD] kernel_initializer type: {type(kernel_initializer)}")
+        print(f"[BUILD] scale: {self.scale}, initializer: {self.initializer}, input_dim: {input_dim}")
 
         self.kernel = self.add_weight(
             name='kernel',
