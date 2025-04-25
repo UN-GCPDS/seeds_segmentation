@@ -46,7 +46,7 @@ class ConvRFF(tf.keras.layers.Layer):
         self.trainable_W = trainable_W
         self.padding = padding
         self.stride = stride
-        self.initializer = kernel
+        self.rff_initializer  = kernel
         self.kernel_regularizer = kernel_regularizer
         self.normalization = normalization
         self.seed = seed
@@ -63,7 +63,7 @@ class ConvRFF(tf.keras.layers.Layer):
             'trainable_scale': self.trainable_scale,
             'trainable_W':self.trainable_W,
             'padding':self.padding,
-            'kernel':self.initializer,
+            'kernel':self.rff_initializer ,
             'normalization':self.normalization,
             'seed' : self.seed,
             'mass': self.mass
@@ -73,7 +73,7 @@ class ConvRFF(tf.keras.layers.Layer):
 
     def build(self,input_shape):
         input_dim = input_shape[-1]
-        kernel_initializer = _get_random_features_initializer(self.initializer,
+        kernel_initializer = _get_random_features_initializer(self.rff_initializer ,
                                                               shape=(self.kernel_size,
                                                                      self.kernel_size,
                                                                      input_dim,
@@ -81,7 +81,7 @@ class ConvRFF(tf.keras.layers.Layer):
                                                                seed=self.seed)
     
         print(f"[BUILD] kernel_initializer type: {type(kernel_initializer)}")
-        print(f"[BUILD] scale: {self.scale}, initializer: {self.initializer}, input_dim: {input_dim}")
+        print(f"[BUILD] scale: {self.scale}, initializer: {self.rff_initializer }, input_dim: {input_dim}")
 
         self.kernel = self.add_weight(
             name='kernel',
@@ -102,12 +102,12 @@ class ConvRFF(tf.keras.layers.Layer):
         )
 
         if self.scale is None:
-            if self.initializer == 'gaussian':
+            if self.rff_initializer  == 'gaussian':
                 self.scale = float(np.sqrt((input_dim * self.kernel_size ** 2) / 2.0))
-            elif self.initializer == 'laplacian':
+            elif self.rff_initializer  == 'laplacian':
                 self.scale = 1.0
             else:
-                raise ValueError(f'Unsupported kernel initializer {self.initializer}')
+                raise ValueError(f'Unsupported kernel initializer {self.rff_initializer }')
         print(f"[BUILD] Computed self.scale: {self.scale} (type: {type(self.scale)})")
         assert isinstance(self.scale, float), f"scale must be float, got {type(self.scale)}"
 
