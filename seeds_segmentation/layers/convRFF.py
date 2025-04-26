@@ -166,13 +166,14 @@ class ConvRFF(tf.keras.layers.Layer):
             # Return a safe default value in case of error
             return tf.constant(1.0, dtype=tf.float32)
 
-    def call(self, inputs):
-        inputs = tf.convert_to_tensor(inputs, dtype=tf.float32)
+def call(self, inputs):
+        if not isinstance(inputs, tf.Tensor):
+            inputs = tf.convert_to_tensor(inputs, dtype=tf.float32)
         scale = tf.math.divide(1.0, self.kernel_scale)
         kernel = tf.math.multiply(scale, self.kernel)
         outputs = tf.nn.conv2d(inputs, kernel,
-                              strides=[1, self.stride, self.stride, 1],
-                              padding=self.padding)
+                                    strides=[1, self.stride, self.stride, 1],
+                                    padding=self.padding)
         outputs = tf.nn.bias_add(outputs, self.bias)
         output_dim = tf.cast(self.output_dim, tf.float32)
 
