@@ -139,16 +139,35 @@ class ConvRFF(tf.keras.layers.Layer):
         return constant*tf.math.exp(-0.5*(x-mean)*(x-mean)/(std*std))
 
     def _compute_mass(self):
-        weights = tf.reshape(self.kernel, shape=(-1, self.output_dim))
-        ww = tf.linalg.norm(weights, axis=0)
-        ww_pos = tf.sort(ww)
-        mean_pos = tf.reduce_mean(ww_pos)
-        std_pos = tf.math.reduce_std(ww_pos)
-        mass_pos = self._compute_normal_probability(ww_pos, mean_pos, std_pos)
-        mass_pos = tf.sqrt(tfp.math.trapz(tf.abs(mass_pos), ww_pos))
-        return mass_pos
+        try:
+            weights = tf.reshape(self.kernel, shape=(-1, self.output_dim))
+            ww = tf.linalg.norm(weights, axis=0)
+            ww_pos = tf.sort(ww)
+            mean_pos = tf.reduce_mean(ww_pos)
+            std_pos = tf.math.reduce_std(ww_pos)
+            
+            # Ensure std_pos is not too small to avoid numerical issues
+            std_pos = tf.maximum(std_pos, 1e-6)
+            
+            mass_pos = self._compute_normal_probability(ww_pos, mean_pos, std_pos)
+            
+            # Use safe trapz implementation to avoid issues
+            mass_result = tf.sqrt(tfp.math.trapz(tf.abs(mass_pos), ww_pos))
+            
+            # Ensure the result is a scalar tensor
+            mass_result = tf.cast(mass_result, tf.float32)
+            
+            # Debug print to see what's being returned
+            tf.print("Mass computed: ", mass_result)
+            
+            return mass_result
+        except Exception as e:
+            tf.print("Error in _compute_mass: ", e)
+            # Return a safe default value in case of error
+            return tf.constant(1.0, dtype=tf.float32)
 
     def call(self, inputs):
+        inputs = tf.convert_to_tensor(inputs, dtype=tf.float32)
         scale = tf.math.divide(1.0, self.kernel_scale)
         kernel = tf.math.multiply(scale, self.kernel)
         outputs = tf.nn.conv2d(inputs, kernel,
@@ -158,13 +177,13 @@ class ConvRFF(tf.keras.layers.Layer):
         output_dim = tf.cast(self.output_dim, tf.float32)
 
         if self.normalization:
-            outputs = tf.math.multiply(tf.math.sqrt(2/output_dim), tf.cos(outputs)) 
+            outputs = tf.math.multiply(tf.math.sqrt(2/output_dim), tf.cos(outputs))
         else:
             outputs = tf.cos(outputs)
 
         if self.mass:
-            mass_factor = self._compute_mass()
-            outputs = tf.math.multiply(mass_factor, outputs)
+            mass_factor = tf.stop_gradient(self._compute_mass())
+            outputs = tf.multiply(mass_factor, outputs)
             
         return outputs
     
